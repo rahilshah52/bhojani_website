@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Profile</title>
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
+</head>
+<body>
+<header>
+<h1>Meet Dr. John Doe, MD</h1>
+<p>Expert in Diabetes & Hypertension Care</p>
+</header>
+
+<nav>
+<a href="/">Home</a><a href="/doctor">Doctor</a><a href="/services">Services</a><a href="/resources">Resources</a><a href="/appointments">Appointments</a><a href="/testimonials">Testimonials</a><a href="/contact">Contact</a><a href="/blog">Blog</a>
+</nav>
+
+<section class="section">
+<div class="grid">
+<div class="card">
+<img src="/static/images/doctor.jpg" alt="Doctor Photo" style="width:100%; border-radius:8px;">
+<h2>Dr. John Doe</h2>
+<p>MD, Endocrinologist</p>
+<p>"My mission is to help patients live healthy lives with diabetes and hypertension. I focus on personalized care and lifestyle management."</p>
+</div>
+</div>
+</section>
+
+<!-- Floating Buttons -->
+<a href="tel:+11234567890" class="floating-btn call-btn">📞 Call</a>
+<a href="https://wa.me/11234567890" class="floating-btn whatsapp-btn" target="_blank">💬 WhatsApp</a>
+
+<script>
+ScrollReveal().reveal('.section, .card', {duration:1000,distance:'50px',origin:'bottom',interval:200});
+</script>
+
+<footer><p>&copy; 2025 Diabetes & Hypertension Clinic</p></footer>
+</body>
+</html>

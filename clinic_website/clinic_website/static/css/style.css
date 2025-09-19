@@ -1,0 +1,160 @@
+/* --------------------
+   Global Styles
+-------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f4ea;
+    color: #2d3e50;
+    line-height: 1.6;
+}
+
+/* --------------------
+   Header & Navigation
+-------------------- */
+header {
+    background-color: #3aafa9;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+nav {
+    background-color: #2d3e50;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #3aafa9;
+    color: white;
+}
+
+/* --------------------
+   Sections
+-------------------- */
+.section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* --------------------
+   Cards
+-------------------- */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex: 1 1 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* --------------------
+   Buttons
+-------------------- */
+.button {
+    background-color: #3aafa9;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2d3e50;
+}
+
+/* --------------------
+   Forms
+-------------------- */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    cursor: pointer;
+}
+
+/* --------------------
+   Footer
+-------------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2d3e50;
+    color: white;
+    margin-top: 40px;
+}
+
+/* --------------------
+   Responsive
+-------------------- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 30px 10px;
+    }
+
+    .section {
+        padding: 20px 10px;
+    }
+}

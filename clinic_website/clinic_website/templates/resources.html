@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Resources</title>
+<link rel="stylesheet" href="/static/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header><h1>Patient Resources</h1></header>
+<nav>
+<a href="/">Home</a><a href="/doctor">Doctor</a><a href="/services">Services</a><a href="/resources">Resources</a><a href="/appointments">Appointments</a><a href="/testimonials">Testimonials</a><a href="/contact">Contact</a><a href="/blog">Blog</a>
+</nav>
+
+<section class="section">
+<h2>FAQs</h2>
+<ul>
+<li>What to expect on your first visit?</li>
+<li>What documents should I bring?</li>
+<li>How often should I get checkups?</li>
+</ul>
+
+<h2>Downloadable Guidelines</h2>
+<p><a href="/static/images/sample_diet.pdf" class="button">Download Diet Guidelines</a></p>
+
+<h2>Health Tracking</h2>
+<p>Track your blood sugar & BP online:</p>
+<canvas id="bpChart" style="max-width:100%; height:300px;"></canvas>
+</section>
+
+<!-- Floating Buttons -->
+<a href="tel:+11234567890" class="floating-btn call-btn">📞 Call</a>
+<a href="https://wa.me/11234567890" class="floating-btn whatsapp-btn" target="_blank">💬 WhatsApp</a>
+
+<script>
+ScrollReveal().reveal('.section, .card', {duration:1000,distance:'50px',origin:'bottom',interval:200});
+
+const ctx = document.getElementById('bpChart').getContext('2d');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+        datasets: [{
+            label: 'Blood Pressure',
+            data: [120, 125, 118, 122, 121, 119, 124],
+            borderColor: '#3aafa9',
+            backgroundColor: 'rgba(58, 175, 169, 0.2)',
+            fill: true,
+            tension:0.3
+        }]
+    },
+    options: { responsive:true, plugins:{legend:{display:true}} }
+});
+</script>
+
+<footer><p>&copy; 2025 Diabetes & Hypertension Clinic</p></footer>
+</body>
+</html>

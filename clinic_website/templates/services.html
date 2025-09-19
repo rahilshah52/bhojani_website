@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="flex items-center justify-between">
+    <h2 class="text-2xl font-bold mt-1">Services</h2>
+    <div class="text-sm text-gray-500">Comprehensive care offerings</div>
+  </div>
+
+  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-[color:var(--primary)]/10 rounded-full flex items-center justify-center text-[color:var(--primary)]">
+          <!-- glucose icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v8m0 0l3-3m-3 3l-3-3"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Diabetes Management</div>
+          <div class="text-sm text-gray-600">Insulin therapy, glucose monitoring and personalised plans.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-[color:var(--primary)]/10 rounded-full flex items-center justify-center text-[color:var(--primary)]">
+          <!-- heart icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 016.364 6.364L12 20.682 4.318 12.682a4.5 4.5 0 010-6.364z"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Hypertension Care</div>
+          <div class="text-sm text-gray-600">BP optimisation, home monitoring, and risk reduction.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-[color:var(--primary)]/10 rounded-full flex items-center justify-center text-[color:var(--primary)]">
+          <!-- lab icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h10M7 11h10M7 15h10M7 19h10"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Diagnostics & Testing</div>
+          <div class="text-sm text-gray-600">Blood tests, lipid profiles, kidney function, and ECG referrals.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-[color:var(--primary)]/10 rounded-full flex items-center justify-center text-[color:var(--primary)]">
+          <!-- diet icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2v20M5 7h14M5 17h14"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Diet & Lifestyle Coaching</div>
+          <div class="text-sm text-gray-600">Nutrition plans, sodium reduction, and activity coaching.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-[color:var(--primary)]/10 rounded-full flex items-center justify-center text-[color:var(--primary)]">
+          <!-- telehealth icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A2 2 0 0122 9.618V16a2 2 0 01-2 2h-6M3 7h6v10H3z"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Telehealth & Remote Monitoring</div>
+          <div class="text-sm text-gray-600">Video visits and remote vitals tracking.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

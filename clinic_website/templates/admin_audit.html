@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Audit Log{% endblock %}
+{% block content %}
+  <h2 class="text-2xl font-bold mt-6">Audit Log</h2>
+  <div class="mt-4 bg-white rounded shadow p-4">
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="text-left text-xs text-gray-500">
+          <th class="py-2">Time</th>
+          <th class="py-2">Actor</th>
+          <th class="py-2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in entries %}
+          <tr class="border-t">
+            <td class="py-2">{{ a.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            <td class="py-2">{{ a.actor }}</td>
+            <td class="py-2">{{ a.action }}</td>
+          </tr>
+        {% else %}
+          <tr><td colspan="3">No audit entries</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2 class="text-2xl font-bold mt-2">Blog & Tips</h2>
+  <div class="mt-4 grid md:grid-cols-2 gap-4">
+    {% for p in posts %}
+      <div class="bg-white rounded-xl shadow p-4">
+        <h3 class="font-semibold text-lg"><a href="/blog/{{ p.slug }}" class="text-[color:var(--primary)]">{{ p.title }}</a></h3>
+        <div class="text-sm text-gray-700 mt-2">{{ p.content[:250] }}{% if p.content|length > 250 %}...{% endif %}</div>
+      </div>
+    {% else %}
+      <div class="bg-white rounded-xl shadow p-4">No posts yet.</div>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,4 @@
+/* Placeholder tailwind.css — run `npm run build:css` in clinic_website to generate a production build.
+   This file is intentionally small so the template has a file to reference until you build a full stylesheet. */
+:root{--primary:#0f766e;--accent:#06b6d4}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}

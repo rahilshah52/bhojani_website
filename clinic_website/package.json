@@ -1,0 +1,11 @@
+{
+  "name": "clinic-website",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "tailwindcss": "^3.5.0"
+  },
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./assets/tailwind-input.css -o ./static/css/tailwind.css --minify --content \"./templates/**/*.html\" \"./**/*.py\""
+  }
+}

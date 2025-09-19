@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header><h1>Book Appointment</h1></header>
+<nav>
+<a href="/">Home</a><a href="/doctor">Doctor</a><a href="/services">Services</a><a href="/resources">Resources</a><a href="/appointments">Appointments</a><a href="/testimonials">Testimonials</a><a href="/contact">Contact</a><a href="/blog">Blog</a>
+</nav>
+
+<section class="section">
+<form action="/appointments" method="post" style="max-width:500px;margin:auto;">
+<label>Name:</label><br><input type="text" name="name" required style="width:100%; padding:10px; margin:5px 0;"><br>
+<label>Email:</label><br><input type="email" name="email" required style="width:100%; padding:10px; margin:5px 0;"><br>
+<label>Phone:</label><br><input type="tel" name="phone" required style="width:100%; padding:10px; margin:5px 0;"><br>
+<label>Preferred Date & Time:</label><br><input type="datetime-local" name="datetime" required style="width:100%; padding:10px; margin:5px 0;"><br>
+<button type="submit" class="button">Book Now</button>
+</form>
+</section>
+
+<footer><p>&copy; 2025 Diabetes & Hypertension Clinic</p></footer>
+</body>
+</html>

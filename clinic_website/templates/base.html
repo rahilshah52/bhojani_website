@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ title or 'Clinic' }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  {%- if config.DEBUG -%}
+  <!-- Development: Tailwind CDN (convenient but not for production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  {%- else -%}
+  <!-- Production: load compiled Tailwind CSS from static files -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
+  {%- endif -%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body class="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-gray-800 leading-relaxed">
+    <nav class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <div class="bg-[color:var(--primary)] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg">DH</div>
+          <div>
+            <div class="font-semibold text-lg">Diabetes & Hypertension Clinic</div>
+            <div class="text-xs text-gray-500">Compassionate, evidence-based care</div>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-4">
+          <a href="/services" class="text-sm text-gray-700 hover:text-[color:var(--accent)]">Services</a>
+          <a href="/resources" class="text-sm text-gray-700 hover:text-[color:var(--accent)]">Resources</a>
+          <a href="/blog" class="text-sm text-gray-700 hover:text-[color:var(--accent)]">Blog</a>
+          <a href="/testimonials" class="text-sm text-gray-700 hover:text-[color:var(--accent)]">Testimonials</a>
+          <a href="/about" class="text-sm text-gray-700 hover:text-[color:var(--accent)]">About</a>
+          {% if session.get('patient_email') %}
+            <a href="/dashboard" class="text-sm text-gray-700 hover:text-[color:var(--accent)]">Dashboard</a>
+            <a href="/logout" class="text-sm text-red-600">Logout</a>
+          {% else %}
+            <a href="/login" class="text-sm px-3 py-2 rounded-md bg-[color:var(--primary)] text-white">Patient Login</a>
+          {% endif %}
+          {# Staff login / dashboard link #}
+          {% if session.get('staff_email') %}
+            <a href="/staff" class="ml-2 text-sm text-gray-700">Staff</a>
+            <a href="/staff/logout" class="ml-2 text-sm text-red-600">Sign out</a>
+          {% else %}
+            <a href="/staff/login" class="ml-2 text-sm text-gray-700">Staff Login</a>
+          {% endif %}
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-toggle" class="p-2 rounded-md text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-white/90">
+        <div class="px-4 pb-4">
+          <a href="/services" class="block py-2">Services</a>
+          <a href="/resources" class="block py-2">Resources</a>
+          <a href="/blog" class="block py-2">Blog</a>
+          <a href="/testimonials" class="block py-2">Testimonials</a>
+          <a href="/about" class="block py-2">About</a>
+          {% if session.get('patient_email') %}
+            <a href="/dashboard" class="block py-2">Dashboard</a>
+            <a href="/logout" class="block py-2 text-red-600">Logout</a>
+          {% else %}
+            <a href="/login" class="block py-2">Patient Login</a>
+          {% endif %}
+          {% if session.get('staff_email') %}
+            <a href="/staff" class="block py-2">Staff</a>
+            <a href="/staff/logout" class="block py-2 text-red-600">Sign out</a>
+          {% else %}
+            <a href="/staff/login" class="block py-2">Staff Login</a>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-6">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="mt-4">
+            {% for m in messages %}
+              <div class="bg-emerald-50 border border-emerald-200 text-emerald-800 px-4 py-2 rounded">{{ m }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+    </main>
+
+    <div class="floating-cta">
+      <!-- Call button: visible on small screens only -->
+      <a href="tel:{{ clinic_phone }}" class="block mb-2 bg-[color:var(--primary)] text-white px-4 py-3 rounded-full shadow-md md:hidden">Call</a>
+      <!-- WhatsApp: always visible, styled green and icon on right bottom -->
+      <a href="https://wa.me/{{ clinic_whatsapp }}" target="_blank" class="wa-cta flex items-center gap-3 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-md" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-4-.9L3 21l2.9-5.2a8.38 8.38 0 01-.9-4 8.5 8.5 0 014.7-7.6A8.38 8.38 0 0112.5 3h.01"/></svg>
+        <span class="hidden sm:inline">WhatsApp</span>
+      </a>
+    </div>
+
+    <footer class="max-w-6xl mx-auto p-6 text-sm text-gray-500 mt-8">
+      <div class="grid md:grid-cols-3 gap-4">
+        <div>
+          <strong>Clinic Hours</strong>
+          <div class="text-xs">Mon-Fri: 9:00 - 17:00<br/>Sat: 9:00 - 13:00</div>
+        </div>
+        <div>
+          <strong>Location</strong>
+          <div class="text-xs">123 Clinic Street, City<br/><a href="/map" class="text-blue-600 underline">Get directions</a></div>
+        </div>
+        <div>
+          <strong>Contact</strong>
+          <div class="text-xs">Phone: +1 234 567 890<br/>Email: clinic@example.com</div>
+        </div>
+      </div>
+        <div class="mt-4">© {{ now.year }} Diabetes & Hypertension Clinic · Built with ❤️</div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/site.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Your Files{% endblock %}
+{% block content %}
+  <div class="max-w-3xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4">Files for {{ patient.name }}</h1>
+    {% if files %}
+      <ul class="space-y-2">
+        {% for f in files %}
+          <li class="p-3 border rounded flex justify-between items-center">
+            <div>
+              <div class="font-medium">{{ f.original_name }}</div>
+              <div class="text-sm text-gray-500">Uploaded {{ f.uploaded_at.strftime('%Y-%m-%d %H:%M') }}</div>
+            </div>
+            <div>
+              <a class="btn" href="{{ url_for('download_file', file_id=f.id) }}">Download</a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No files yet. Contact your clinic to upload documents.</p>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Staff Login{% endblock %}
+{% block content %}
+  <h2 class="text-2xl font-bold mt-6">Staff / Doctor Login</h2>
+  <form action="/staff/login" method="post" class="mt-4 max-w-md bg-white p-4 rounded shadow">
+    <input name="email" placeholder="Email" type="email" required class="border p-2 rounded" />
+    <input name="password" placeholder="Password" type="password" required class="border p-2 rounded mt-2" />
+    <button class="bg-[color:var(--primary)] text-white px-4 py-2 rounded mt-2">Login</button>
+  </form>
+  <p class="text-sm text-gray-500 mt-2">If you need a staff account, ask the clinic administrator to create one.</p>
+{% endblock %}

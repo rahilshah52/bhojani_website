@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="bg-white rounded-2xl shadow p-6">
+    <div class="md:flex md:gap-6">
+      <div class="md:flex-1">
+        <h2 class="text-3xl font-bold">About the Diabetes & Hypertension Clinic</h2>
+
+        <p class="mt-3 text-gray-700">Diabetes & Hypertension Clinic (DHC) is a specialist outpatient service dedicated to comprehensive management of diabetes mellitus, hypertension and related metabolic conditions. Our multidisciplinary team delivers evidence-based medical care combined with patient education, behavioural support and remote monitoring to achieve sustained improvements in health and quality of life.</p>
+
+        <h3 class="mt-5 text-xl font-semibold">Our mission</h3>
+        <p class="mt-3 text-gray-700">Our mission is to provide high-quality, compassionate and affordable care that empowers people living with chronic metabolic disease to lead full, healthy lives. We emphasise early specialist involvement, structured education and continuous support—using the latest clinical techniques and remote monitoring technologies where appropriate.</p>
+
+        <h3 class="mt-5 text-xl font-semibold">What we offer</h3>
+        <ul class="list-disc list-inside mt-2 text-gray-700">
+          <li>Individualised treatment plans for diabetes and hypertension</li>
+          <li>Insulin and medication optimisation, including use of continuous glucose monitoring where indicated</li>
+          <li>Remote vitals monitoring and telehealth consultations</li>
+          <li>Structured education, lifestyle and nutrition support</li>
+          <li>Multidisciplinary coordination with dietitians, nurses and allied health professionals</li>
+        </ul>
+
+        <h3 class="mt-5 text-xl font-semibold">How we work</h3>
+        <p class="mt-3 text-gray-700">We combine specialist clinical assessment with personalised goal-setting and regular remote review. Our approach blends medication management, behaviour change support and technology-assisted monitoring to reduce complications and improve day-to-day wellbeing.</p>
+
+        <h3 class="mt-5 text-xl font-semibold">Our approach</h3>
+        <ul class="list-disc list-inside mt-2 text-gray-700">
+          <li>Personalized care plans tailored to your goals</li>
+          <li>Remote vitals tracking and telehealth visits</li>
+          <li>Medication optimisation and lifestyle coaching</li>
+        </ul>
+
+        <h3 class="mt-5 text-xl font-semibold">Clinic hours & contact</h3>
+        <div class="mt-2 text-sm text-gray-600">
+          <div>Mon–Fri: 9:00 — 17:00</div>
+          <div>Sat: 9:00 — 13:00</div>
+          <div class="mt-1">Phone: <a href="tel:{{ clinic_phone }}" class="text-[color:var(--primary)] underline">{{ clinic_phone }}</a></div>
+          <div>Email: <a href="mailto:{{ clinic_email }}" class="text-[color:var(--primary)] underline">{{ clinic_email }}</a></div>
+        </div>
+      </div>
+      <div class="md:w-64 md:flex-shrink-0 mt-6 md:mt-0">
+        <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=800&auto=format&fit=crop&s=example" alt="Clinic team" class="rounded-xl w-full h-40 object-cover shadow" />
+        <div class="mt-4 text-sm text-gray-600">Our multidisciplinary team works together to help you reach your health goals.</div>
+      </div>
+    </div>
+
+    <hr class="my-6" />
+
+    <h3 class="text-xl font-semibold">Meet the team</h3>
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl p-4 shadow flex gap-3 items-center">
+        <img src="/static/images/placeholder-team.svg" alt="Dr. Asif Bhojani" class="w-16 h-16 rounded-full object-cover"/>
+        <div>
+          <div class="font-semibold">Dr. Asif Bhojani, MBBS, MD</div>
+          <div class="text-xs text-gray-500">Consultant Endocrinologist & Diabetologist</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow flex gap-3 items-center">
+        <div class="w-12 h-12 bg-[color:var(--primary)] text-white rounded-full flex items-center justify-center font-semibold">AP</div>
+        <div>
+          <div class="font-semibold">Dr. Amit Patel</div>
+          <div class="text-xs text-gray-500">Endocrinologist & Hypertension Specialist</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow flex gap-3 items-center">
+        <div class="w-12 h-12 bg-[color:var(--primary)] text-white rounded-full flex items-center justify-center font-semibold">RS</div>
+        <div>
+          <div class="font-semibold">Rita Shah, RN</div>
+          <div class="text-xs text-gray-500">Care Coordinator</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow flex gap-3 items-center">
+        <div class="w-12 h-12 bg-[color:var(--primary)] text-white rounded-full flex items-center justify-center font-semibold">MK</div>
+        <div>
+          <div class="font-semibold">Mehul Kapoor, RD</div>
+          <div class="text-xs text-gray-500">Dietitian</div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6" />
+
+    <h3 class="text-xl font-semibold">Lead Physician — Dr. Asif Bhojani</h3>
+    <div class="mt-4 bg-white rounded-xl p-6 shadow">
+      <div class="md:flex md:gap-6">
+        <div class="md:w-48 md:flex-shrink-0">
+          <img src="/static/images/placeholder-team.svg" alt="Dr. Asif Bhojani" class="rounded-xl w-full h-48 object-cover shadow" />
+        </div>
+        <div class="md:flex-1 mt-4 md:mt-0">
+          <h4 class="text-lg font-semibold">Dr. Asif Bhojani — Consultant Endocrinologist</h4>
+          <p class="mt-2 text-gray-700">Dr. Asif Bhojani is a consultant endocrinologist and diabetologist with over 15 years of clinical experience. He specialises in comprehensive diabetes care, hypertension management and metabolic medicine, with particular expertise in insulin therapy optimisation, continuous glucose monitoring and remote patient management.</p>
+
+          <h5 class="mt-4 font-semibold">Professional qualifications</h5>
+          <ul class="list-disc list-inside text-gray-700 mt-2">
+            <li>MBBS</li>
+            <li>MD in Endocrinology</li>
+            <li>Fellowship training in diabetes and metabolic medicine</li>
+          </ul>
+
+          <h5 class="mt-4 font-semibold">Clinical focus and approach</h5>
+          <p class="text-gray-700 mt-2">Dr. Bhojani adopts an evidence-based, patient-centred approach. He emphasises personalised goals, medication rationalisation and practical lifestyle strategies. He integrates technology—such as home monitoring and telehealth—to maintain close follow-up and support long-term risk reduction.</p>
+
+          <h5 class="mt-4 font-semibold">Teaching & research</h5>
+          <p class="text-gray-700 mt-2">Dr. Bhojani contributes to continuing professional education and has authored peer-reviewed articles on diabetes care. Details of publications and speaking engagements are available on request.</p>
+          <div class="mt-4 flex gap-3">
+            <a href="/book?doctor=Dr.+Asif+Bhojani" class="inline-block bg-[color:var(--primary)] text-white px-4 py-2 rounded">Contact / Book</a>
+            <a href="tel:{{ clinic_phone }}" class="inline-block border border-gray-200 px-4 py-2 rounded">Call clinic</a>
+            <a href="https://wa.me/{{ clinic_whatsapp }}" target="_blank" class="inline-block border border-gray-200 px-4 py-2 rounded">WhatsApp</a>
+          </div>
+          <div class="mt-3 text-sm text-gray-500">Connect: <a href="mailto:{{ clinic_email }}" class="underline">{{ clinic_email }}</a></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-6" />
+
+    <h3 class="text-xl font-semibold">Services summary</h3>
+    <div class="mt-3 grid sm:grid-cols-2 gap-4 text-gray-700">
+      <div class="bg-white rounded-xl p-4 shadow">Diabetes management & insulin optimisation</div>
+      <div class="bg-white rounded-xl p-4 shadow">Hypertension management & home BP programs</div>
+      <div class="bg-white rounded-xl p-4 shadow">Remote vitals monitoring & telehealth</div>
+      <div class="bg-white rounded-xl p-4 shadow">Diet, lifestyle coaching and medication reviews</div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Manage Patients{% endblock %}
+{% block content %}
+  <h2 class="text-2xl font-bold mt-6">Manage Patients</h2>
+  <div class="mt-4 bg-white rounded shadow p-4">
+    <a href="/admin/new-patient" class="btn">Create new patient</a>
+    <table class="w-full mt-4 text-sm">
+      <thead>
+        <tr class="text-left text-xs text-gray-500"><th>Name</th><th>Email</th><th>Phone</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        {% for p in patients %}
+          <tr class="border-t">
+            <td class="py-2">{{ p.name }}</td>
+            <td class="py-2">{{ p.email }}</td>
+            <td class="py-2">{{ p.phone or '' }}</td>
+            <td class="py-2">
+              <a class="underline" href="{{ url_for('admin_edit_patient', patient_id=p.id) }}">Edit</a>
+              <form action="{{ url_for('admin_delete_patient', patient_id=p.id) }}" method="post" style="display:inline">
+                <button class="text-red-600 underline ml-2" onclick="return confirm('Delete this patient?')">Delete</button>
+              </form>
+            </td>
+          </tr>
+        {% else %}
+          <tr><td colspan="4">No patients</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

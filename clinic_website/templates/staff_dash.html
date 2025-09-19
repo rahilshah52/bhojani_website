@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Staff Dashboard{% endblock %}
+{% block content %}
+  <h2 class="text-2xl font-bold mt-6">Staff Dashboard</h2>
+  <div class="mt-4 bg-white rounded shadow p-4">
+    <h3 class="font-semibold">Hello, {{ staff.name if staff else 'Staff' }}</h3>
+    <div class="mt-2 text-sm text-gray-600">Role: {{ staff.role if staff else 'staff' }}</div>
+  </div>
+
+  <div class="mt-4 bg-white rounded shadow p-4">
+    <h3 class="font-semibold">Patients</h3>
+    <ul class="mt-2">
+      {% for p in patients %}
+        <li class="flex justify-between items-center border-b py-2">
+          <div>
+            <div class="font-medium">{{ p.name }} &lt;{{ p.email }}&gt;</div>
+            <div class="text-sm text-gray-500">{{ p.phone or 'No phone' }}</div>
+          </div>
+          <div class="space-x-2">
+            <a class="text-sm underline" href="{{ url_for('upload_file', patient_id=p.id) }}">Upload</a>
+            <a class="text-sm underline" href="{{ url_for('impersonate_patient', patient_id=p.id) }}">Impersonate</a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
