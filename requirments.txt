@@ -1,0 +1,48 @@
+# Core Flask and server
+Flask==3.0.3
+gunicorn==21.2.0
+
+# Database + ORM
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.34
+
+# Flask utilities
+Werkzeug==3.0.4
+Jinja2==3.1.4
+itsdangerous==2.2.0
+click==8.1.7
+
+# Common Flask extensions
+Flask-Login==0.6.3
+Flask-WTF==1.2.1
+email-validator==2.1.1    # needed for WTForms email validation
+Flask-Migrate==4.0.7
+Flask-Script==2.0.6
+
+# Password hashing & security
+bcrypt==4.1.2
+passlib==1.7.4
+
+# Forms & CSRF protection
+WTForms==3.1.2
+
+# Environment variables (optional but useful)
+python-dotenv==1.0.1
+
+# HTTP & API support
+requests==2.32.3
+Flask-RESTful==0.3.10
+marshmallow==3.22.0
+
+# Data & utils
+pandas==2.2.3
+numpy==2.1.2
+
+# Date/time utilities
+python-dateutil==2.9.0
+pytz==2024.2
+
+# Testing
+pytest==8.3.3
+pytest-flask==1.3.0
+coverage==7.6.4
